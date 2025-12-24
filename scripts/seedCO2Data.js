@@ -2,8 +2,8 @@ import fs from 'fs';
 import Papa from 'papaparse';
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://atxzdfgfusiblgchbfzs.supabase.co';
-const supabaseKey = 'sb_publishable_aNHctfcrdDWYSF_oxNKO_g_9HSXfOUK';
+const supabaseUrl = process.env.VITE_SUPABASE_URL;
+const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function seedCO2Data() {  
