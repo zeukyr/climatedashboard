@@ -39,11 +39,12 @@ const Temperature = () => {
         const filtered = data.filter(row => row.year >= startYear && row.year <= endYear);
         setFilteredData(filtered); }, [startYear, endYear, data]);
 
-    const latestValue = filteredData[filteredData.length - 1]?.co2_ppm;
-    const earliestValue = filteredData[0]?.co2_ppm;
+    const latestValue = filteredData[filteredData.length - 1]?.temperature_anomaly;
+    const earliestValue = filteredData[0]?.temperature_anomaly;
     const change = latestValue - earliestValue;
     const percentChange = ((change / earliestValue) * 100).toFixed(2);
-
+    const direction = change >= 0 ? "increasing" : "decreasing"
+    
 
     if (loading) {
         return <div className="text-center py-8">Loading...</div>;
@@ -72,6 +73,14 @@ const Temperature = () => {
                 unit="°C"
                 full_unit="Degrees Celsius"
             />
+            
+            <MetricCard
+                title={`Change in Temperature Anomaly from ${startYear} to ${endYear}`}
+                number={percentChange}
+                unit="%"
+                full_unit={`Or ${direction} by ${change.toFixed(2)} Celsius`}
+            />
+
     
           <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-2xl font-bold mb-4">Temperature Anomaly Over Time in 0.01 Degrees Celsius (Base Period 1951-1980)

@@ -11,17 +11,23 @@
     "seed:co2": "node scripts/seedCO2Data.js",
     "seed:sealevels": "node scripts/seedSeaLevelsData.js",
     "seed:temperature": "node scripts/seedTemperatureData.js",
+    "seed:zonal_temperature": "node scripts/seedZonalTemperatureData.js",
     "seed:all": "node scripts/seedAll.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
     "@tailwindcss/vite": "^4.1.18",
+    "d3": "^7.9.0",
+    "dotenv": "^17.2.3",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.562.0",
     "papaparse": "^5.5.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.11.0",
-    "recharts": "^3.6.0"
+    "recharts": "^3.6.0",
+    "simple-statistics": "^7.8.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

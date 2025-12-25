@@ -40,11 +40,11 @@ const SeaLevels = () => {
         const filtered = data.filter(row => row.decimal_date >= startYear && row.decimal_date <= endYear);
         setFilteredData(filtered); }, [startYear, endYear, data]);
 
-    const latestValue = filteredData[filteredData.length - 1]?.co2_ppm;
-    const earliestValue = filteredData[0]?.co2_ppm;
+    const latestValue = filteredData[filteredData.length - 1]?.sea_level_mm;
+    const earliestValue = filteredData[0]?.sea_level_mm;
     const change = latestValue - earliestValue;
     const percentChange = ((change / earliestValue) * 100).toFixed(2);
-
+    const direction = change >= 0 ? "increasing" : "decreasing"
 
 
     if (loading) {
@@ -73,7 +73,13 @@ const SeaLevels = () => {
                 unit="mm"
                 full_unit="Millimeters"
             />
-    
+            
+            <MetricCard
+                title={`Change in Global Mean Seal Level from ${startYear} to ${endYear}`}
+                number={percentChange}
+                unit="%"
+                full_unit={`Or ${direction} at ${change.toFixed(2)} Mm`}
+            />
           <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-2xl font-bold mb-4">Global Mean Sea Level over Time</h2>
             <LineChartComponent

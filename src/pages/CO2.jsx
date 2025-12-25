@@ -42,7 +42,8 @@ const CO2 = () => {
     const earliestValue = filteredData[0]?.co2_ppm;
     const change = latestValue - earliestValue;
     const percentChange = ((change / earliestValue) * 100).toFixed(2);
-      
+    const direction = change >= 0 ? "increasing" : "decreasing"
+
 
     if (loading) {
         return <div className="text-center py-8">Loading...</div>;
@@ -74,7 +75,7 @@ const CO2 = () => {
                 title={`Percent Change in CO2 Concentration from ${startYear} to ${endYear}`}
                 number={percentChange}
                 unit="%"
-                full_unit={`Or ${change.toFixed(2)} ppm change`}
+                full_unit={`Or ${direction} at ${change.toFixed(2)} ppm change`}
             />
 
           <div className="bg-white p-6 rounded-lg shadow">
