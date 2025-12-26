@@ -52,7 +52,7 @@ const SeaLevels = () => {
       }
     
       return (
-        <div className="space-y-6">
+        <div className="space-y-6 p-20">
           <div>
             <h1 className="text-4xl font-bold text-gray-800"> Global Mean Sea Level</h1>
             <p className="text-gray-600 mt-2">Data from NOAA, CNES, and EUMETSAT</p>
@@ -75,7 +75,7 @@ const SeaLevels = () => {
             />
             
             <MetricCard
-                title={`Change in Global Mean Seal Level from ${startYear} to ${endYear}`}
+                title={`Change in Global Mean Sea Level from ${startYear} to ${endYear}`}
                 number={percentChange}
                 unit="%"
                 full_unit={`Or ${direction} at ${change.toFixed(2)} Mm`}

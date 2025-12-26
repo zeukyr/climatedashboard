@@ -50,7 +50,7 @@ const CO2 = () => {
       }
     
       return (
-        <div className="space-y-6">
+        <div className="space-y-6 p-20">
           <div>
             <h1 className="text-4xl font-bold text-gray-800">Atmospheric CO2 Levels</h1>
             <p className="text-gray-600 mt-2">Data from Mauna Loa Observatory, Hawaii</p>

@@ -51,9 +51,9 @@ const Temperature = () => {
       }
     
       return (
-        <div className="space-y-6">
+        <div className="space-y-6 p-20">
           <div>
-            <h1 className="text-4xl font-bold text-gray-800">Global Land-Ocean Temperature Index</h1>
+            <h1 className="text-4xl font-bold text-gray-800"> Land-Ocean Temperature Index</h1>
             <p className="
             text-gray-600 mt-2">Data from NASA GISTEMP</p>
           </div>
@@ -83,8 +83,9 @@ const Temperature = () => {
 
     
           <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-2xl font-bold mb-4">Temperature Anomaly Over Time in 0.01 Degrees Celsius (Base Period 1951-1980)
+            <h2 className="text-2xl font-bold mb-4">Temperature Anomaly Over Time 
             </h2>
+            <span className="mt-2 text-gray-600"> Base Period 1951-1980</span>
             <LineChartComponent
              data={filteredData} 
              title="Temperature Anomaly (0.01 °C)"

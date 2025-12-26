@@ -52,7 +52,7 @@ const TemperatureMap = () => {
     const colorScale = scaleSequential(interpolateRdYlBu) .domain([2, -2]);
     
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-20">
       <div>
         <h1 className="text-4xl font-bold text-gray-800">Global Temperature Change Over Time</h1>
         <p className="text-gray-600 mt-2">

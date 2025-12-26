@@ -1,19 +1,26 @@
-import { useState } from 'react'
-import Filter from './ui/Filter.jsx'
 import CO2 from './pages/CO2.jsx'
 import Temperature from './pages/Temperature.jsx'
 import SeaLevel from './pages/SeaLevels.jsx'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TemperatureMap from './pages/TemperatureMap.jsx'
+import LandingPage from './pages/LandingPage.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <TemperatureMap />
+      <BrowserRouter>
+        <Navbar />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/CO2" element={<CO2 />} />
+            <Route path="/temperature" element={<Temperature />} />
+            <Route path="/sealevel" element={<SeaLevel />} />
+            <Route path="/temperature-map" element={<TemperatureMap />} />
+          </Routes>
+</BrowserRouter>
+
     </>
   )
 }
